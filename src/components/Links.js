@@ -6,22 +6,26 @@ const Links = () => {
   return (
     <div className="flex justify-between mt-4 w-full">
       <div className="flex flex-col">
-        <a
-          target={'_blank'}
-          rel="noreferrer"
-          href={cryptoDetails?.links?.homepage[0]}
-          className="text-sm text-gray-100 bg-gray-200 px-1.5 py-0.5 my-1 rounded"
-        >
-          {cryptoDetails?.links?.homepage[0].substring(0, 30)}
-        </a>
-        <a
-          target={'_blank'}
-          rel="noreferrer"
-          href={cryptoDetails?.links?.blockchain_site[0]}
-          className="text-sm text-gray-100 bg-gray-200 px-1.5 py-0.5 my-1 rounded"
-        >
-          {cryptoDetails?.links?.blockchain_site[0].substring(0, 30)}
-        </a>
+        {cryptoDetails?.links?.homepage[0] && (
+          <a
+            target={'_blank'}
+            rel="noreferrer"
+            href={cryptoDetails?.links?.homepage[0]}
+            className="text-sm text-gray-100 bg-gray-200 px-1.5 py-0.5 my-1 rounded"
+          >
+            {cryptoDetails?.links?.homepage[0].substring(0, 30)}
+          </a>
+        )}
+        {cryptoDetails?.links?.blockchain_site[0] && (
+          <a
+            target={'_blank'}
+            rel="noreferrer"
+            href={cryptoDetails?.links?.blockchain_site[0]}
+            className="text-sm text-gray-100 bg-gray-200 px-1.5 py-0.5 my-1 rounded"
+          >
+            {cryptoDetails?.links?.blockchain_site[0].substring(0, 30)}
+          </a>
+        )}
         {cryptoDetails?.links?.official_forum_url[0] && (
           <a
             target={'_blank'}
@@ -34,7 +38,7 @@ const Links = () => {
         )}
       </div>
       <div className="flex flex-col content-start">
-        <span className="text-sm capitalize text-gray-100">centiment</span>
+        <span className="text-sm capitalize text-gray-100">centiment:</span>
         <div className="flex justify-between w-full">
           <div className="text-sm px-1 ml-2 font-medium flex items-center rounded bg-opacity-25 my-1 bg-green text-green">
             <span>

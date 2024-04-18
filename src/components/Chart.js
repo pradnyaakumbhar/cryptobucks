@@ -28,7 +28,7 @@ const Chart = () => {
     getChartData(cryptoDetails.id);
   }, [cryptoDetails.id, type, days]);
   return (
-    <div className="w-full h-[80%]">
+    <div className="w-full h-[100%]">
       <ChartComponent data={chartData} currency={currency} type={type} />
       <div className="flex">
         <button
